@@ -7,6 +7,28 @@
   </head>
   <body>
     <h1>Open the console</h1>
-    <script></script>
+    <script>
+     
+      function light(colour, callback) {
+        window.setTimeout(()=> {
+          console.log(colour); 
+          if (callback) {
+            callback(); 
+          }}, 1000); 
+        }
+
+     light("green", ()=>{
+      light("amber", ()=> {
+        light("red", ()=> {
+          light("amber", ()=>{
+            light("green", () =>{
+              console.log("finished")
+            })
+          })
+        })
+      })
+     })
+    
+    </script>
   </body>
 </html>
