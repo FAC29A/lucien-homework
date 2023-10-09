@@ -7,6 +7,44 @@
   </head>
   <body>
     <h1>Open the console</h1>
-    <script></script>
+    <script>
+
+        const token ="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";
+        const headers = {
+        Authorization: `Bearer ${token}`,
+        };
+      
+      function getUser(username) {
+        const user_url = `https://api.github.com/users/${username}`;
+       
+        return fetch(user_url, { headers })
+        .then((response) => response.json());
+      }
+
+      getUser("oliverjam")
+      .then((user) => console.log(user))
+      .catch((error)=> console.log(error)); 
+
+      // task 2
+      function getRepos(user) {
+        return fetch(user.repos_url, { headers })
+        .then((response) => response.json())
+      }
+      getUser("oliverjam")
+      .then(getRepos)
+      .then(console.log)
+      .catch(console.error)
+
+      // bonus
+
+      const oliverPromise = getUser("oliverjam")
+      const starPromise = getUser("starsuit")
+
+      Promise.all([oliverPromise, starPromise])
+      .then(console.log)
+      .catch(console.error)
+    
+
+    </script>
   </body>
 </html>
