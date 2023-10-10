@@ -9,6 +9,21 @@
     <h1>Open the console</h1>
     <script>
       // write your code here
+
+
+      
+      
+      fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+      .then((response)=> response.json())
+      .then((jsonResponse)=> fetch(jsonResponse.species.url))
+      .then((specie) => specie.json())
+      .then((specieJson) => fetch(specieJson.shape.url))
+      .then((shape) => shape.json())
+      .then((result) => console.log(result))
+
+      
+      
+
     </script>
   </body>
 </html>
