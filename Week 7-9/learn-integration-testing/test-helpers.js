@@ -23,3 +23,4 @@ function test(name, testFunction) {
   testFunction();
   console.groupEnd(name);
 }
+
