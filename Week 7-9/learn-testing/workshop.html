@@ -13,6 +13,63 @@
       function square(x) {
         return x * x;
       }
+      
+      function equal(actual, expect, message){
+        if (actual === expect){
+          const defaultMessage = `expected ${expect} and received ${actual}`
+          console.info(`Pass: ${message}` || `Pass: ${defaultMessage}`)
+        } else {
+          // because each block is different scope so you can declare defaultMessage again 
+          const defaultMessage = `expected ${expect}, but received ${actual}`
+          console.error(`Failed: ${message}`|| `Failed:  ${defaultMessage}`)
+        }
+      }
+
+      test ("correctly square interger", () => {
+        const actual = square(2)
+        const expect = 4
+        equal(actual, expect, "square(2) should return 4" )
+      })
+
+
+      function notEqual(actual, expect){
+        if (actual !== expect) {
+          console.log(`Pass: ${actual} is different to the expected number ${expect}` )
+        } else {
+          console.error(`Failed: ${actual} is  the same as the expected number ${expect}`)
+        }
+      }
+
+
+      const actual3 = square(3); 
+      const expect3 = 10;
+
+      notEqual(actual3, expect3); 
+
+
+      function test (name, testFunction){
+        console.group(name); 
+        testFunction(); 
+        console.groupEnd(); 
+      }
+
+      test ("correctly square interger", ()=> {
+      const result = square(2); 
+      const expect = 4 
+      equal(result, expect); 
+      })
+
+      test ("correct square decimal", ()=>{
+      const result = square(1.5); 
+      const expect = 2.25 
+      equal(result, expect); 
+
+      })
+
+
+
+
+
     </script>
   </body>
 </html>
