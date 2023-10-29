@@ -220,7 +220,7 @@ test("reduce() loop ofer each element and change accumulator", ()=>{
   equal(reduce([2,3], (acc, x)=> acc * x, 1), 6)
 })
 
-
+// set initial as 3rd paremeter
 function reduce(arr, fn, initial){
   
   let acc = initial; 
@@ -230,11 +230,11 @@ function reduce(arr, fn, initial){
     i = 1
     acc = arr[0]; 
     }
-    
     // in the for loop, you don't need to add + acc because you should let function calculate itself, perhaps it could be multiply or other stuff 
     for (; i < arr.length;  i++){
       acc = fn(acc, arr[i]) 
   }
- 
   return acc; 
 }
+
+
