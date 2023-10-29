@@ -31,3 +31,19 @@ function every(array, fn){
 
    return result; 
 }
+
+
+function some(array, fn) {
+  let result = true; 
+  
+  for (let element of array) {
+    if (fn(element)){
+      result = fn(element); 
+      break
+    }
+    if (!fn(element)){
+      result = fn(element); 
+    }
+  }
+  return result; 
+}

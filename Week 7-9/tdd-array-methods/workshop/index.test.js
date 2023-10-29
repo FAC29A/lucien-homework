@@ -132,6 +132,34 @@ test ("every() should break the loop if any of element doesn't pass the loop", (
 
 
 
+// ----- Some fucntion 
+
+test ("some() should loop through all element and break when any element meet condition", () => {
+  const actual = some([10, 20], (x) => x > 15)
+  equal (actual, true)
+})
+
+// function some(array, fn) {
+//   let result = true; 
+  
+//   for (let element of array) {
+//     if (fn(element)){
+//       result = fn(element); 
+//       break
+//     }
+
+//   }
+//   return result; 
+// }
+
+test ("some() in the situation when nothing meet the condition should return false", () => {
+  const actual = some([10, 20], (x) => x > 30)
+  equal (actual, false)
+  equal (some([30, 60, 90], (x) => x > 30), true)
+})
+
+
+
 
 
 
