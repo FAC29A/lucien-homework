@@ -222,4 +222,46 @@ test("reduce() loop ofer each element and change accumulator", ()=>{
 
 
 
+// --------------test flat()
+test ("flat() handle for two dimension layer ", ()=>{
+  const actual = flat([1, [2, 3], 4])
+  equal(actual[2], 3)
+})
+
+// function flat(array) {
+
+//   let result = []; 
+//  for (let i = 0; i < array.length; i ++ ){
+//   if (Array.isArray(array[i])){
+//     result = result.concat(array[i])
+//   } else {
+//     result.push(array[i])
+//   }
+//  }
+//  return JSON.stringify(result); 
+
+// }
+
+test ("flat() handle for more than two dimension layer ", ()=>{
+  const actual = flat([1, [2,[3]], 4], 2)
+  equal(actual[1], 2)
+  equal(actual[2], 3)
+})
+
+// depth = 1 is default setting if depth parameter is not entered
+// function flat(array, depth=1) {
+//   let result = [];
+//   for (let i = 0; i < array.length; i++) {
+//     if (Array.isArray(array[i]) && depth > 0) {
+//       result.push(...flat(array[i], depth - 1));
+//     } else {
+//       result.push(array[i]);
+//     }
+//   }
+//   return result;
+
+
+
+
+
 
