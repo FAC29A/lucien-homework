@@ -91,4 +91,48 @@ test("filter() can handle an array of mulptilpe elements", ()=>{
 //   return JSON.stringify(result); 
 // }
 
+// ---- Testing Every
+
+
+test ("every() should return true if all the element pass the condition ", ( )=>
+{  const actual = every([2, 3], (x) => x > 1);
+
+  equal(actual, true)
+})
+
+// function every(array, fn){
+
+//   let result = true; 
+//   for (let element of array){
+//    if (fn(element)){
+//     result =  fn(element); 
+//   }
+//   return result; 
+// }
+// }
+
+test ("every() should break the loop if any of element doesn't pass the loop", () =>
+{ const actual = every([1, 2, 3, 4, 5], (x)=> x > 4)
+  equal(actual, false)
+}
+)
+
+
+// function every(array, fn){
+//   let result = true; 
+//   for (let element of array){
+
+ 
+//     result = fn(element); 
+//     if (!result) break; 
+//   }
+
+//    return result; 
+// }
+
+
+
+
+
+
 

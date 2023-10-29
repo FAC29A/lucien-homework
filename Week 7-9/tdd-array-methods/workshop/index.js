@@ -18,3 +18,16 @@ function filter(array, fn) {
   }
   return JSON.stringify(result); 
 }
+
+
+function every(array, fn){
+  let result = true; 
+  for (let element of array){
+
+ 
+    result = fn(element); 
+    if (!result) break; 
+  }
+
+   return result; 
+}
