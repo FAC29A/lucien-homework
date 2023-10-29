@@ -61,3 +61,20 @@ function find(arr, fn){
   }
     return result; 
 }
+
+// set initial as 3rd paremeter
+function reduce(arr, fn, initial){
+  
+  let acc = initial; 
+  let i = 0 
+
+  if (initial == undefined ){
+    i = 1
+    acc = arr[0]; 
+    }
+    // in the for loop, you don't need to add + acc because you should let function calculate itself, perhaps it could be multiply or other stuff 
+    for (; i < arr.length;  i++){
+      acc = fn(acc, arr[i]) 
+  }
+  return acc; 
+}
