@@ -11,7 +11,6 @@ test("map() should return an array with the same number of elements", () => {
 //   }
   
   
-
 test("map() should transform each element of the array using the fn argument", () => {
   const result = map([1], (x) => x + 1);
   equal(result[0], 2);
@@ -33,7 +32,6 @@ test ("map() should transform an array of two element using the fn argument", ()
 })
 
 
-
 test ("map() should pass index into fn argument ", () => {
   const result = map(['hello', 'world'], (word, index) => `${word}${index}`); 
   equal(result[0], 'hello0'); 
@@ -41,6 +39,56 @@ test ("map() should pass index into fn argument ", () => {
 })
 
 
+// ----Testing filter fucntion 
 
+
+test ("filter() should return nothing if it doesn't match condition ", () => {
+  const actual = filter([1], (x) => x > 3); 
+  equal(actual,JSON.stringify([])); 
+})
+
+
+// function filter(array, fn) {
+//   const result = []; 
+//   const element = array[0]
+//   if (!fn(element)) {
+//     return JSON.stringify(result); 
+//   }
+// }
+
+
+test ("filter() should return the same element if it match condition", () => {
+  const actual = filter([4], (x) => x > 3)
+  equal(actual, JSON.stringify([4]))
+})
+
+
+// function filter(array, fn) {
+//   const result = []; 
+//   const element = array[0]
+//   if (!fn(element)) {
+//     return JSON.stringify(result); 
+//   }
+//   if (fn(element)) {
+//     result.push(element)
+//     return JSON.stringify(result); 
+//   }
+// }
+
+test("filter() can handle an array of mulptilpe elements", ()=>{
+ const actual = filter([1,2,3,4,5], (x)=> x > 3 )
+  equal(actual, JSON.stringify([4, 5]))
+})
+
+// function filter(array, fn) {
+//   const result = []; 
+
+//   for (let element of array){
+//   if (fn(element)) {
+//     result.push(element)
+//   }
+//   }
+//   return JSON.stringify(result); 
+// }
 
 

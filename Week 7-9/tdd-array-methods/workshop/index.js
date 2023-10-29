@@ -6,3 +6,15 @@ function map(array, fn){
   } 
   return result; 
 } 
+
+
+function filter(array, fn) {
+  const result = []; 
+
+  for (let element of array){
+  if (fn(element)) {
+    result.push(element)
+  }
+  }
+  return JSON.stringify(result); 
+}
