@@ -200,5 +200,41 @@ test("find() to return undefined if no element match the condition", () =>{
 // }
 
 
+// ----reduce()testing 
+
+test("reduce() that handle total in one iteration", ()=>{
+ const actual = reduce([1], (acc, x) => acc + x, 0 )
+ equal (actual, 1)
+  
+})
+
+// function reduce(arr, fn){
+//   let acc = 0; 
+//   acc = arr[0] + 0; 
+//   return acc; 
+// }
+
+test("reduce() loop ofer each element and change accumulator", ()=>{
+  const actual = reduce([2, 3, 4], (acc, x) => acc + x, 1 )
+  equal(actual, 10)
+  equal(reduce([2,3], (acc, x)=> acc * x, 1), 6)
+})
 
 
+function reduce(arr, fn, initial){
+  
+  let acc = initial; 
+  let i = 0 
+
+  if (initial == undefined ){
+    i = 1
+    acc = arr[0]; 
+    }
+    
+    // in the for loop, you don't need to add + acc because you should let function calculate itself, perhaps it could be multiply or other stuff 
+    for (; i < arr.length;  i++){
+      acc = fn(acc, arr[i]) 
+  }
+ 
+  return acc; 
+}
