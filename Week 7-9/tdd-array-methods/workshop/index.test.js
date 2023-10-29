@@ -159,7 +159,45 @@ test ("some() in the situation when nothing meet the condition should return fal
 })
 
 
+// ------find() test
 
+test("find() find the first element meet the condition and return the first element that passed and break ", () =>{
+  const actual = find([10, 20, 30], (x) => x > 15)
+  equal (actual, 20); 
+  equal (find(['a','b','c','b'], (x) => x == 'b'), 'b')
+})
+
+// function find(arr, fn){
+
+//   let result = 0
+//   for(let i = 0;  i < arr.length;  i++) {
+//     let element = arr[i]; 
+//     result = element
+//     if(fn(element)) break; 
+//   }
+//     return result; 
+// }
+
+test("find() to return undefined if no element match the condition", () =>{
+  const actual = find([10, 20, 30], (x) => x > 40)
+  equal (actual, undefined)
+})
+
+// function find(arr, fn){
+//   let result = 0
+//   for(let i = 0;  i < arr.length;  i++) {
+//     let element = arr[i]; 
+
+  
+//     result = element
+//     if(fn(element)) break; 
+
+//     if (!fn(element)){
+//     result =  undefined
+//     }
+//   }
+//     return result; 
+// }
 
 
 

@@ -47,3 +47,17 @@ function some(array, fn) {
   }
   return result; 
 }
+
+
+function find(arr, fn){
+  let result = 0
+  for(let i = 0;  i < arr.length;  i++) {
+    let element = arr[i];   
+    result = element
+    if(fn(element)) break; 
+    if (!fn(element)){
+    result =  undefined
+    }
+  }
+    return result; 
+}
