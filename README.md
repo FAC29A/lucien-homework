@@ -25,8 +25,8 @@ A sweet sweet home for the foundation workshops.
 #### Week 7-9: Testing
 - [x] Build a testing library
 - [x] Unit testing workshop
-- [ ] Integration testing workshop
-- [ ] TDD workshop
+- [x] Integration testing workshop
+- [x] TDD workshop
 
 #### Week 7-9: Project
 - [ ] Node & npm introduction
