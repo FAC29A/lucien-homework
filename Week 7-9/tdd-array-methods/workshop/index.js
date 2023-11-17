@@ -16,7 +16,7 @@ function filter(array, fn) {
     result.push(element)
   }
   }
-  return JSON.stringify(result); 
+  return result; 
 }
 
 

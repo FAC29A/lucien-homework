@@ -44,7 +44,8 @@ test ("map() should pass index into fn argument ", () => {
 
 test ("filter() should return nothing if it doesn't match condition ", () => {
   const actual = filter([1], (x) => x > 3); 
-  equal(actual,JSON.stringify([])); 
+  console.log(actual); 
+  equal(actual,[]); 
 })
 
 
